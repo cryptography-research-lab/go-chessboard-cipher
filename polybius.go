@@ -1,7 +1,6 @@
 package chessboard_cipher
 
 import (
-	"errors"
 	"fmt"
 	variable_parameter "github.com/golang-infrastructure/go-variable-parameter"
 	"strings"
@@ -18,9 +17,14 @@ func PolybiusEncrypt(text string, chessboard ...Chessboard) (string, error) {
 	for _, char := range text {
 		point := encryptMap[char]
 		if point == nil {
-			return "", errors.New("not found character")
+			return "", ErrEncryptText
 		}
 		buff.WriteString(fmt.Sprintf("%d%d", point.X+1, point.Y+1))
 	}
 	return buff.String(), nil
+}
+
+// PolybiusDecrypt Polybius棋盘解密，传入的text必须全是数字组成，否则返回错误
+func PolybiusDecrypt(text string, chessboard ...Chessboard) (string, error) {
+	panic("")
 }
