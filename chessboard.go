@@ -6,7 +6,8 @@ import (
 	"strings"
 )
 
-// Chessboard 定义一个5*5的棋盘，后面加密的时候就基于这个棋盘来加密
+// Chessboard 定义一个棋盘，后面加密的时候就基于这个棋盘来加密，这个棋盘可以是任意大小，但是必须是每个位置仅有一个字符，并且字符不能重复
+// 这个棋盘实际上就是密码表，只不过这个密码表是公开的
 type Chessboard [][]rune
 
 // Chessboard55_I 默认棋盘，保留I
@@ -21,13 +22,13 @@ var Chessboard55_I = [][]rune{
 // Chessboard55_J 默认棋盘，保留J
 var Chessboard55_J = [][]rune{
 	{'A', 'B', 'C', 'D', 'E'},
-	{'F', 'G', 'H', 'I', 'K'},
+	{'F', 'G', 'H', 'J', 'K'},
 	{'L', 'M', 'N', 'O', 'P'},
 	{'Q', 'R', 'S', 'T', 'U'},
 	{'V', 'W', 'X', 'Y', 'Z'},
 }
 
-// NewRandomChessboard 生成一个随机5*5的棋盘
+// NewRandomChessboard 基于给定的棋盘生成一个随机的棋盘，用于一次一密棋盘
 func NewRandomChessboard(baseChessboard ...Chessboard) Chessboard {
 
 	// 设置默认参数
@@ -39,9 +40,9 @@ func NewRandomChessboard(baseChessboard ...Chessboard) Chessboard {
 	consumer := slice.NewSliceConsumer(runeSlice)
 
 	// 按照洗牌后的一维rune组装为一个新的棋盘
-	chessboard := make([][]rune, 5)
+	chessboard := make([][]rune, len(baseChessboard[0]))
 	for indexX := range chessboard {
-		chessboard[indexX] = make([]rune, 5)
+		chessboard[indexX] = make([]rune, len(baseChessboard[indexX]))
 		for indexY := range chessboard[indexX] {
 			chessboard[indexX][indexY] = consumer.Take()
 		}
@@ -72,7 +73,7 @@ func (x Chessboard) ToMapForEncrypt() map[rune]*Point {
 }
 
 // 把棋盘转为字符串返回，用于观察棋盘长啥样
-// 数据样例：
+// 返回数据样例：
 //
 //	 [
 //		[ I, C, L, O, M ]
