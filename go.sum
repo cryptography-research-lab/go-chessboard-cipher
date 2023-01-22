@@ -1,3 +1,4 @@
+github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/golang-infrastructure/go-compare-anything v0.0.2-0.20230108071748-35501d697475 h1:uzE5mG0WVAfjwRyZdO8ccVXIxC53JC+t+TthU8Vd4bs=
 github.com/golang-infrastructure/go-compare-anything v0.0.2-0.20230108071748-35501d697475/go.mod h1:CtyKakUDiX9wgDm6OXrN9K9NnBa6GuwG880fexW9YMs=
 github.com/golang-infrastructure/go-gtypes v0.0.1 h1:hnM1OYSwLPLGkZ4C6ecAxgmAUaPTjnhnUtRNmJj4p6c=
@@ -16,3 +17,6 @@ github.com/golang-infrastructure/go-tuple v0.0.0-20221215155811-4ed54fe7d579 h1:
 github.com/golang-infrastructure/go-tuple v0.0.0-20221215155811-4ed54fe7d579/go.mod h1:cn8fHK0Sjxh7nSrnNpRa9wi1wIsmBLsjOip4LTjQz+Q=
 github.com/golang-infrastructure/go-variable-parameter v0.0.3 h1:+roJv+T/krkl5YMZtCXzdgDSP0RDWK0W1V2lTkpeDNA=
 github.com/golang-infrastructure/go-variable-parameter v0.0.3/go.mod h1:qEnCqgG04+EpGWqRXaNpKhu4JsP6xcT85WpJyS83Dcw=
+github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
+github.com/stretchr/testify v1.8.1 h1:w7B6lhMri9wdJUVmEZPGGhZzrYTPvgJArz7wNPgYKsk=
+gopkg.in/yaml.v3 v3.0.1 h1:fxVm/GzAzEWqLHuvctI91KS9hhNmmWOoWu0XTYJS7CA=
