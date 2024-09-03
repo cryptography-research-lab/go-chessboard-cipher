@@ -66,6 +66,8 @@ func (x Chessboard) ToMapForEncrypt() map[rune]*Point {
 	mapForEncrypt := make(map[rune]*Point)
 	for lineIndex, lineValue := range x {
 		for columnIndex, columnValue := range lineValue {
+			// 保证返回的map的key中的字母都是大写字母
+			columnValue = ToUpperCase(columnValue)
 			mapForEncrypt[columnValue] = NewPoint(lineIndex, columnIndex)
 		}
 	}

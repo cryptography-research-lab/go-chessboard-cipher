@@ -15,6 +15,8 @@ func PolybiusEncrypt(text string, chessboard ...Chessboard) (string, error) {
 	encryptMap := chessboard[0].ToMapForEncrypt()
 	buff := strings.Builder{}
 	for _, char := range text {
+		// 转换为大写字母
+		char = ToUpperCase(char)
 		point := encryptMap[char]
 		if point == nil {
 			return "", ErrEncryptText
