@@ -42,7 +42,7 @@ func NewRandomChessboard(baseChessboard ...Chessboard) Chessboard {
 	// 按照洗牌后的一维rune组装为一个新的棋盘
 	chessboard := make([][]rune, len(baseChessboard[0]))
 	for indexX := range chessboard {
-		chessboard[indexX] = make([]rune, len(baseChessboard[indexX]))
+		chessboard[indexX] = make([]rune, len(baseChessboard[0][indexX]))
 		for indexY := range chessboard[indexX] {
 			chessboard[indexX][indexY] = consumer.Take()
 		}
