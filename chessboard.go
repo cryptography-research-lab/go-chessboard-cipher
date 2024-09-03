@@ -10,7 +10,7 @@ import (
 // 这个棋盘实际上就是密码表，只不过这个密码表是公开的
 type Chessboard [][]rune
 
-// Chessboard55_I 默认棋盘，保留I
+// Chessboard55_I 保留I
 var Chessboard55_I = [][]rune{
 	{'A', 'B', 'C', 'D', 'E'},
 	{'F', 'G', 'H', 'I', 'K'},
@@ -19,7 +19,7 @@ var Chessboard55_I = [][]rune{
 	{'V', 'W', 'X', 'Y', 'Z'},
 }
 
-// Chessboard55_J 默认棋盘，保留J
+// Chessboard55_J 保留J
 var Chessboard55_J = [][]rune{
 	{'A', 'B', 'C', 'D', 'E'},
 	{'F', 'G', 'H', 'J', 'K'},
@@ -28,11 +28,14 @@ var Chessboard55_J = [][]rune{
 	{'V', 'W', 'X', 'Y', 'Z'},
 }
 
+// DefaultChessboard 默认棋盘
+var DefaultChessboard = Chessboard55_I
+
 // NewRandomChessboard 基于给定的棋盘生成一个随机的棋盘，用于一次一密棋盘
 func NewRandomChessboard(baseChessboard ...Chessboard) Chessboard {
 
 	// 设置默认参数
-	baseChessboard = variable_parameter.SetDefaultParam(baseChessboard, Chessboard55_I)
+	baseChessboard = variable_parameter.SetDefaultParam(baseChessboard, DefaultChessboard)
 
 	// 把棋盘打平返回一维的格式，同时对一维的rune进行shuffle洗牌
 	runeSlice := baseChessboard[0].Flat()
