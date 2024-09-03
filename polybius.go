@@ -24,7 +24,7 @@ func PolybiusEncrypt(plaintext string, chessboard ...Chessboard) (string, error)
 
 		point := encryptMap[char]
 		if point == nil {
-			return "", ErrEncryptText
+			return "", fmt.Errorf("the letter '%s' was not found in the chessboard; please check if the input board and the content match", string(char))
 		}
 		runes[index*2] = rune(point.X + '1')
 		runes[index*2+1] = rune(point.Y + '1')
