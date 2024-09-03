@@ -17,3 +17,8 @@ func ToLowerCase(c rune) rune {
 		return c
 	}
 }
+
+// IsAlpha 判断字符是否是字母
+func IsAlpha(c rune) bool {
+	return (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')
+}
